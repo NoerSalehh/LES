@@ -9,13 +9,9 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hi Noer! 👽👽</h1>
+    <h1>Blog time! 👽👽</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/HenryLes/Les1/Les1/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/HenryLes/Les1/Les1/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
+
 </div>
     {% for blog in blogs %}
     <div class="col-md-4">
@@ -25,8 +21,10 @@
                 <p class="card-text">{{ blog.tekst }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary"></button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                    href="{{ path('blog_show', {'id': blog.id}) }}">show</a></button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                    href="{{ path('blog_edit', {'id': blog.id}) }}">edit</a></button>
                     </div>
                     <small class="text-muted">9 mins</small>
                 </div>
